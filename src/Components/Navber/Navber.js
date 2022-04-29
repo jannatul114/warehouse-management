@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { CustomLink } from 'react-router-dom';
 import { MenuAlt1Icon, XIcon } from '@heroicons/react/solid'
 import './Navber.css';
+import CustomLink from '../Authintications/CustomeLink/CustomeLink';
 const Navber = () => {
     const [menuDisplay, setMenuDisplay] = useState(false);
     return (
@@ -11,10 +12,10 @@ const Navber = () => {
 
                     <h2>Fruit Valley</h2>
                     <nav className='navber'>
-                        <Link to={'/home'}>HOME</Link>
-                        <Link to={'/home'}>LOGIN</Link>
-                        <Link to={'/home'}>REGISTURE</Link>
-                        <Link to={'/home'}>BLOGS</Link>
+                        <CustomLink to={'/home'}>HOME</CustomLink>
+                        <CustomLink to={'/blogs'}>BLOGS</CustomLink>
+                        <CustomLink to={'/Login'}>LOGIN</CustomLink>
+                        <CustomLink to={'/Registar'}>REGISTURE</CustomLink>
                     </nav>
 
                 </section>
@@ -22,13 +23,13 @@ const Navber = () => {
             <header className='header-2'>
                 <h1 className='small-name'>Fruit Valley</h1>
                 {menuDisplay && <nav className='nav-2'>
-                    <Link to={'/home'}>HOME</Link>
-                    <Link to={'/home'}>LOGIN</Link>
-                    <Link to={'/home'}>REGISTURE</Link>
-                    <Link to={'/home'}>BLOGS</Link>
+                    <CustomLink to={'/home'}>HOME</CustomLink>
+                    <CustomLink to={'/blogs'}>BLOGS</CustomLink>
+                    <CustomLink to={'/Login'}>LOGIN</CustomLink>
+                    <CustomLink to={'/Registar'}>REGISTURE</CustomLink>
                 </nav>
                 }
-                <button className='menu-btn' onClick={() => setMenuDisplay(!menuDisplay)}>
+                <button style={{ border: 'none' }} className='menu-btn' onClick={() => setMenuDisplay(!menuDisplay)}>
                     {menuDisplay ?
                         <XIcon width={30} />
                         :

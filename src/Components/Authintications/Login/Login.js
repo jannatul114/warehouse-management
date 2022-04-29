@@ -1,9 +1,27 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     return (
         <div>
-            <h1>login</h1>
+            <div className='w-50 p-2 mx-auto my-3'>
+                <h1 className='text-center'>Login</h1>
+                <form>
+                    <input className='w-100 p-3' placeholder='Email' style={{ borderRadius: "30px" }} type="Email" name='Email' />
+                    <br />
+                    <input placeholder='Password' className='w-100 my-3 p-3' style={{ borderRadius: "30px" }} type="password" name='password' />
+                    <br />
+                    <div className='d-flex justify-content-center'>
+                        <button className='explore-button'><span className='btn-span'></span>Login</button>
+                    </div>
+                    <div className='mx-auto'>
+                        <SocialLogin></SocialLogin>
+                    </div>
+                </form>
+
+            </div>
+            <Footer></Footer>
         </div>
     );
 };

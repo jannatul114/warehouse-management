@@ -1,13 +1,13 @@
 import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
 
-const Registart = () => {
+const Blogs = () => {
     return (
         <div>
-            <h1>registar</h1>
+            <h1>blogs</h1>
             <Footer></Footer>
         </div>
     );
 };
 
-export default Registart;
+export default Blogs;
