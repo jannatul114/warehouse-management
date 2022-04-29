@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../images/perfume.png';
 import { MenuAlt1Icon, XIcon } from '@heroicons/react/solid'
 import './Navber.css';
 const Navber = () => {
@@ -10,7 +9,7 @@ const Navber = () => {
             <header className='header'>
                 <section className='flex'>
 
-                    <h1>friuts</h1>
+                    <h2>Fruit Valley</h2>
                     <nav className='navber'>
                         <Link to={'/home'}>HOME</Link>
                         <Link to={'/home'}>LOGIN</Link>
@@ -21,16 +20,15 @@ const Navber = () => {
                 </section>
             </header>
             <header className='header-2'>
-                <h1>fruits</h1>
+                <h1 className='small-name'>Fruit Valley</h1>
                 {menuDisplay && <nav className='nav-2'>
-                    <Link to={'/'}>Home</Link>
-                    <Link to={'/blogs'}>Blog</Link>
-                    <Link to={'/aboutme'}>About Me</Link>
-
-                    <Link to={'/registar'}>Registar</Link>
+                    <Link to={'/home'}>HOME</Link>
+                    <Link to={'/home'}>LOGIN</Link>
+                    <Link to={'/home'}>REGISTURE</Link>
+                    <Link to={'/home'}>BLOGS</Link>
                 </nav>
                 }
-                <button onClick={() => setMenuDisplay(!menuDisplay)}>
+                <button className='menu-btn' onClick={() => setMenuDisplay(!menuDisplay)}>
                     {menuDisplay ?
                         <XIcon width={30} />
                         :

@@ -1,0 +1,61 @@
+.banner-img {
+    width: 100%;
+    height: 500px;
+}
+
+.slider-container {
+    margin-top: 100px;
+}
+
+.slider-img {
+    border: 4px solid #009688;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+.highlight {
+    font-size: 50px;
+    color: #009688;
+    font-weight: bolder;
+}
+
+.texts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.explore-button {
+    width: 200px;
+    padding: 15px;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 3px solid #009688;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-size: 18px;
+
+}
+
+.btn-span {
+    background: #009688;
+    height: 100%;
+    width: 0%;
+    border-radius: 20px;
+    color: black;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.explore-button:hover span {
+    width: 100%;
+    color: black;
+
+}

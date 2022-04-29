@@ -1,0 +1,13 @@
+.foo {
+    margin-top: 100px;
+    background: #00968770;
+    border-top: 3px solid #009688;
+}
+
+.set-border {
+    border-bottom: 3px solid #098b7eee;
+}
+
+.copyright-part {
+    background-color: #22978cde;
+}

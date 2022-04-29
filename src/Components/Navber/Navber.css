@@ -2,7 +2,6 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    outline: none;
     border: none;
     text-decoration: none;
 }
@@ -23,6 +22,7 @@
     right: 0;
     background-color: #fff;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    border-bottom: 2px solid #009687e8;
 }
 
 .navber a {
@@ -30,6 +30,12 @@
     position: relative;
     color: #009688;
     font-weight: bold;
+    text-decoration: none;
+}
+
+.navber {
+    display: flex;
+    align-items: center;
 }
 
 .navber a::after {
@@ -51,7 +57,16 @@
     width: 100%;
 }
 
+
+
 @media only screen and (max-width: 600px) {
+    .small-name {
+        font-size: 25px;
+    }
+
+    .menu-btn {
+        background-color: #fff;
+    }
 
     .header {
         display: none;
@@ -74,6 +89,7 @@
         background-color: #0096878a;
         padding: 20px;
         transition: 0.9s;
+        font-weight: bold;
         z-index: 1;
     }
 
@@ -88,5 +104,9 @@
     .nav-2 {
         display: flex;
         gap: 20px;
+    }
+
+    .nav-2 a {
+        color: #fff;
     }
 }
