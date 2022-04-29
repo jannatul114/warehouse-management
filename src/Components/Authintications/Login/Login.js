@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../../Shared/Footer/Footer';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
@@ -15,10 +16,13 @@ const Login = () => {
                     <div className='d-flex justify-content-center'>
                         <button className='explore-button'><span className='btn-span'></span>Login</button>
                     </div>
+                    <p className='text-center fs-5'>Don't have any account? <Link className='fw-bold' style={{ color: '#009688' }} to={'/registar'}>Registar</Link> </p>
+
                     <div className='mx-auto'>
                         <SocialLogin></SocialLogin>
                     </div>
                 </form>
+
 
             </div>
             <Footer></Footer>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './SocialLogin.css';
+import google from '../../../images/google.png';
 const SocialLogin = () => {
     return (
         <div className=''>
@@ -10,8 +11,11 @@ const SocialLogin = () => {
                 <div style={{ borderBottom: '3px solid #009688' }} className='w-50 '>
                 </div>
             </div>
-            <div className='d-flex justify-center'>
-                <button className='google'>Signin with</button>
+            <div className='w-25 mx-auto d-flex justify-center'>
+                <button className='google d-flex align-items-center'>
+                    Signin with
+                    <img className='ms-3' style={{ height: '35px' }} src={google} alt="" />
+                </button>
             </div>
         </div>
     );
