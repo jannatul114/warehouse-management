@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './items.css';
 const Items = () => {
     const [items, setItems] = useState([])
@@ -33,7 +34,7 @@ const Items = () => {
                 }
             </div>
             <div className='d-flex justify-content-center'>
-                <button className='update-button mt-3'>Manage inventory</button>
+                <Link to={'/manage'} style={{ textDecoration: 'none' }} className='update-button mt-3'>Manage inventory</Link>
             </div>
         </div>
 

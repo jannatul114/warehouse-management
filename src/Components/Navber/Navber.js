@@ -20,11 +20,21 @@ const Navber = () => {
 
                     <h2>Fruit Valley</h2>
                     <nav className='navber'>
-                        <CustomLink to={'/home'}>HOME</CustomLink>
-                        <CustomLink to={'/blogs'}>BLOGS</CustomLink>
-                        <CustomLink to={'/Login'}>LOGIN</CustomLink>
-                        <CustomLink to={'/Registar'}>REGISTURE</CustomLink>
-                        {user && <button onClick={userSignOut} className='signout'>Signout</button>}
+                        <CustomLink to={'/home'}>Home</CustomLink>
+                        <CustomLink to={'/blogs'}>Blogs</CustomLink>
+                        {
+                            user ? <button onClick={userSignOut} className='signout'>Signout</button> : <CustomLink to={'/Login'}>Login</CustomLink>
+                        }
+                        {!user && <CustomLink to={'/Registar'}>Registar</CustomLink>}
+                        {
+                            user && <CustomLink to={'/manage'}>Manage items</CustomLink>
+                        }
+                        {
+                            user && <CustomLink to={'/additems'}>Add items</CustomLink>
+                        }
+                        {
+                            user && <CustomLink to={'/myitems'}>My Items</CustomLink>
+                        }
                     </nav>
 
                 </section>

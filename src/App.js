@@ -6,8 +6,10 @@ import Registart from './Components/Authintications/Registar/Registart';
 import RequireAuth from './Components/Authintications/RequireAuth/RequireAuth';
 import Home from './Components/Home/Home';
 import Navber from './Components/Navber/Navber';
+import AddItems from './Components/Pages/AddItems/AddItems';
 import Blogs from './Components/Pages/Blogs/Blogs';
 import Manage from './Components/Pages/Manage/Manage';
+import NotFound from './Components/Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -20,11 +22,17 @@ function App() {
         <Route path='/registar' element={<Registart></Registart>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/manage' element={
-
           <RequireAuth>
             <Manage></Manage>
           </RequireAuth>
         }></Route>
+        <Route path='/addItems' element={
+          <RequireAuth>
+            <AddItems></AddItems>
+          </RequireAuth>
+        }></Route>
+
+        <Route path='*' element={<NotFound></NotFound>}></Route>
 
       </Routes>
 
