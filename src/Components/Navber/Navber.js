@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { CustomLink } from 'react-router-dom';
 import { MenuAlt1Icon, XIcon } from '@heroicons/react/solid'
 import './Navber.css';
 import CustomLink from '../Authintications/CustomeLink/CustomeLink';
@@ -8,16 +7,15 @@ import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 const Navber = () => {
     const [menuDisplay, setMenuDisplay] = useState(false);
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const userSignOut = () => {
         signOut(auth)
-
     }
+
     return (
         <div>
             <header className='header'>
                 <section className='flex'>
-
                     <h2>Fruit Valley</h2>
                     <nav className='navber'>
                         <CustomLink to={'/home'}>Home</CustomLink>

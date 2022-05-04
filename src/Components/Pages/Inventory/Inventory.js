@@ -3,14 +3,39 @@ import { useParams } from 'react-router-dom';
 
 const Inventory = () => {
     const { id } = useParams();
-    console.log(id);
-
     const [itemDetail, setItemDetail] = useState({});
     useEffect(() => {
         fetch(`http://localhost:5000/allfruits/${id}`)
             .then(res => res.json())
             .then(data => setItemDetail(data))
     }, [id])
+
+    const delivered = () => {
+        const name = itemDetail?.name;
+        const email = itemDetail?.email;
+        const img = itemDetail?.img;
+        const supplier = itemDetail?.supplier;
+        const price = itemDetail?.price;
+        const _id = itemDetail?._id;
+        const description = itemDetail?.description;
+        const quantity = JSON.parse(itemDetail?.quantity) !== 0 ? JSON.parse(itemDetail?.quantity) - 1 : JSON.parse(itemDetail?.quantity)
+
+        const updatingItems = { name, email, img, supplier, price, description, quantity, _id };
+        setItemDetail(updatingItems)
+
+        const url = `http://localhost:5000/allfruits/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(updatingItems)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+
+            })
+        console.log(itemDetail);
+    }
     return (
         <div>
             <div className='d-flex justify-content-center my-3'>
@@ -23,16 +48,19 @@ const Inventory = () => {
                         </div>
                         <div className="col-md-7">
                             <div className="card-body">
-                                <h2 className="card-title">Name: {itemDetail?.name}</h2>
-                                <p className="card-text">Description: {itemDetail?.description}</p>
-                                <p className="card-text">Price: {itemDetail?.price}</p>
-                                <p className="card-text">Supplire: {itemDetail?.supplier}</p>
-                                <p className="card-text">Quantity: {itemDetail?.quantity}</p>
-                                <p className="card-text">Id: {itemDetail?._id}</p>
+                                <h2 className="card-title"><span className='fw-bold'>Name:</span> {itemDetail?.name}</h2>
+                                <p className="card-text"> <span className='fw-bold'>Price:</span> {itemDetail?.price}</p>
+                                <p className="card-text"><span className='fw-bold'>Supplire:</span> {itemDetail?.supplier}</p>
+                                <p className="card-text"> <span className='fw-bold'>Quantity:</span> {itemDetail?.quantity}</p>
+                                <p className="card-text"><span className='fw-bold'>Id:</span> {itemDetail._id}</p>
 
-
+                                <button className='update-button' onClick={delivered}>Delivered</button>
                             </div>
+
                         </div>
+                    </div>
+                    <div className="card-footer">
+                        <p className="card-text"><span className='fw-bold'>Description:</span> {itemDetail?.description}</p>
                     </div>
                 </div>
             </div>

@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Footer from '../../Shared/Footer/Footer';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { toast, ToastContainer } from 'react-toastify';
 import swal from 'sweetalert';
+import Loading from '../../Shared/Loading/Loading';
 
 const Registart = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [
         createUserWithEmailAndPassword,
         user,
@@ -22,9 +25,12 @@ const Registart = () => {
         }
     }, [error])
 
+    if (loading) {
+        <Loading></Loading>
+    }
 
     if (user) {
-        navigate('/home');
+        navigate(from, { replace: true });
     }
     const handleRegistar = async event => {
         event.preventDefault()
