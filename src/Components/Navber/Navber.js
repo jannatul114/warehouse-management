@@ -22,9 +22,7 @@ const Navber = () => {
                     <nav className='navber'>
                         <CustomLink to={'/home'}>Home</CustomLink>
                         <CustomLink to={'/blogs'}>Blogs</CustomLink>
-                        {
-                            user ? <button onClick={userSignOut} className='signout'>Signout</button> : <CustomLink to={'/Login'}>Login</CustomLink>
-                        }
+
                         {!user && <CustomLink to={'/Registar'}>Registar</CustomLink>}
                         {
                             user && <CustomLink to={'/manage'}>Manage items</CustomLink>
@@ -34,6 +32,9 @@ const Navber = () => {
                         }
                         {
                             user && <CustomLink to={'/myitems'}>My Items</CustomLink>
+                        }
+                        {
+                            user ? <button onClick={userSignOut} className='signout'>Signout</button> : <CustomLink to={'/Login'}>Login</CustomLink>
                         }
                     </nav>
 

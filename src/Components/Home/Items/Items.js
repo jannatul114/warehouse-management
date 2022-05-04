@@ -8,6 +8,11 @@ const Items = () => {
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
+
+    if (items.length > 6) {
+        const slicing = items.slice(0, 6);
+        setItems(slicing)
+    }
     return (
         <div>
             <h1 className='text-center my-4'>Inventory items</h1>
@@ -26,7 +31,8 @@ const Items = () => {
                                     <h4>Quantity: {item.price}</h4>
                                 </div>
                                 <div className="card-footer">
-                                    <button className='update-button'>Update</button>
+
+                                    <Link to={`/inventory/${item._id}`}> <button className='update-button'>Update</button></Link>
                                 </div>
                             </div>
                         </div>

@@ -8,6 +8,7 @@ import Home from './Components/Home/Home';
 import Navber from './Components/Navber/Navber';
 import AddItems from './Components/Pages/AddItems/AddItems';
 import Blogs from './Components/Pages/Blogs/Blogs';
+import Inventory from './Components/Pages/Inventory/Inventory';
 import Manage from './Components/Pages/Manage/Manage';
 import NotFound from './Components/Pages/NotFound/NotFound';
 
@@ -29,6 +30,11 @@ function App() {
         <Route path='/addItems' element={
           <RequireAuth>
             <AddItems></AddItems>
+          </RequireAuth>
+        }></Route>
+        <Route path='/inventory/:id' element={
+          <RequireAuth>
+            <Inventory></Inventory>
           </RequireAuth>
         }></Route>
 
