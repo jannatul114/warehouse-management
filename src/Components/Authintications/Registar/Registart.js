@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Footer from '../../Shared/Footer/Footer';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { toast, ToastContainer } from 'react-toastify';
+import swal from 'sweetalert';
 
 const Registart = () => {
     const navigate = useNavigate();
@@ -13,16 +15,24 @@ const Registart = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    useEffect(() => {
+        if (error) {
+            toast(error?.message);
+        }
+    }, [error])
+
+
     if (user) {
         navigate('/home');
     }
-    const handleRegistar = event => {
+    const handleRegistar = async event => {
         event.preventDefault()
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        createUserWithEmailAndPassword(email, password);
-        console.log(email, password);
+        await createUserWithEmailAndPassword(email, password);
+
     }
     return (
         <div>
@@ -39,12 +49,14 @@ const Registart = () => {
                     <div className='d-flex justify-content-center'>
                         <button className='explore-button'><span className='btn-span'></span>Registar</button>
                     </div>
-                    <div className='mx-auto'>
-                        <SocialLogin></SocialLogin>
-                    </div>
+
                 </form>
+                <div className='mx-auto'>
+                    <SocialLogin></SocialLogin>
+                </div>
 
             </div>
+            <ToastContainer />
             <Footer></Footer>
         </div>
     );

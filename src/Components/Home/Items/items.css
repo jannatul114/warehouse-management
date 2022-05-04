@@ -1,0 +1,10 @@
+.update-button {
+    background-color: #009688;
+    padding: 7px 15px;
+    color: #fff;
+    border: none;
+}
+
+.set-border {
+    border: 2px solid #009688;
+}
