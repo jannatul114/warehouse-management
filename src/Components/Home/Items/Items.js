@@ -28,7 +28,7 @@ const Items = () => {
                                     <p className="card-text">{item.description}</p>
                                     <h5>Supplire: {item.supplier}</h5>
                                     <h3>$ {item.price}</h3>
-                                    <h4>Quantity: {item.price}</h4>
+                                    <h4>Quantity: {item.quantity}</h4>
                                 </div>
                                 <div className="card-footer">
 

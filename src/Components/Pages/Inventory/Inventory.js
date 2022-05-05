@@ -16,11 +16,10 @@ const Inventory = () => {
         const img = itemDetail?.img;
         const supplier = itemDetail?.supplier;
         const price = itemDetail?.price;
-        const _id = itemDetail?._id;
         const description = itemDetail?.description;
         const quantity = JSON.parse(itemDetail?.quantity) !== 0 ? JSON.parse(itemDetail?.quantity) - 1 : JSON.parse(itemDetail?.quantity)
 
-        const updatingItems = { name, email, img, supplier, price, description, quantity, _id };
+        const updatingItems = { name, email, img, supplier, price, description, quantity };
         setItemDetail(updatingItems)
 
         const url = `http://localhost:5000/allfruits/${id}`;
@@ -48,7 +47,7 @@ const Inventory = () => {
                         </div>
                         <div className="col-md-7">
                             <div className="card-body">
-                                <h2 className="card-title"><span className='fw-bold'>Name:</span> {itemDetail?.name}</h2>
+                                <h2 className="card-title"><span className='fw-bold'>{itemDetail?.name}</span></h2>
                                 <p className="card-text"> <span className='fw-bold'>Price:</span> {itemDetail?.price}</p>
                                 <p className="card-text"><span className='fw-bold'>Supplire:</span> {itemDetail?.supplier}</p>
                                 <p className="card-text"> <span className='fw-bold'>Quantity:</span> {itemDetail?.quantity}</p>
