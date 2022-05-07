@@ -47,9 +47,9 @@ const Registart = () => {
                 <form onSubmit={handleRegistar} >
                     <input className='w-100 p-3' placeholder='Name (optional)' style={{ borderRadius: "30px" }} type="text" name='name' />
                     <br />
-                    <input className='w-100 p-3 my-3' placeholder='Email' style={{ borderRadius: "30px" }} type="email" name='email' />
+                    <input className='w-100 p-3 my-3' placeholder='Email' style={{ borderRadius: "30px" }} type="email" name='email' required />
                     <br />
-                    <input placeholder='Password' className='w-100 my-2 p-3' style={{ borderRadius: "30px" }} type="password" name='password' />
+                    <input placeholder='Password' className='w-100 my-2 p-3' style={{ borderRadius: "30px" }} type="password" name='password' required />
                     <br />
                     <p className='text-center fs-5'>Already have an account? <Link className='fw-bold' style={{ color: '#009688' }} to={'/login'}>Login</Link> </p>
                     <div className='d-flex justify-content-center'>

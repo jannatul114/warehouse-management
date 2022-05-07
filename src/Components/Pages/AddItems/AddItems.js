@@ -6,12 +6,11 @@ import auth from '../../../firebase.init';
 
 const AddItems = () => {
     const [user] = useAuthState(auth);
-    console.log(user.email);
     const { register, handleSubmit } = useForm();
 
-    const onSubmit = data => {
+    const onSubmit = (data, event) => {
         console.log(data);
-        const url = `http://localhost:5000/allfruits`;
+        const url = `https://sleepy-ocean-93953.herokuapp.com/usersfruits`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -23,6 +22,7 @@ const AddItems = () => {
             .then(result => {
                 console.log(result);
                 toast("Items added successfully!!")
+                event.target.reset()
             })
     }
     return (

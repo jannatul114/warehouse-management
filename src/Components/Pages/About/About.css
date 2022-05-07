@@ -1,0 +1,9 @@
+.text-before::before {
+    content: ' ❝';
+    font-size: 20px;
+}
+
+.text-before::after {
+    content: ' ❞';
+    font-size: 20px;
+}

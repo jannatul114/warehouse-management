@@ -6,6 +6,7 @@ import Registart from './Components/Authintications/Registar/Registart';
 import RequireAuth from './Components/Authintications/RequireAuth/RequireAuth';
 import Home from './Components/Home/Home';
 import Navber from './Components/Navber/Navber';
+import About from './Components/Pages/About/About';
 import AddItems from './Components/Pages/AddItems/AddItems';
 import Blogs from './Components/Pages/Blogs/Blogs';
 import Inventory from './Components/Pages/Inventory/Inventory';
@@ -23,6 +24,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/registar' element={<Registart></Registart>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/about' element={<About></About>}></Route>
         <Route path='/manage' element={
           <RequireAuth>
             <Manage></Manage>

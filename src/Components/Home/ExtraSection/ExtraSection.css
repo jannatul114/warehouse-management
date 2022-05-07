@@ -1,0 +1,8 @@
+.imgs:hover {
+    transform: perspective(800px) rotateY(0deg);
+    opacity: 1;
+}
+
+.img-container {
+    opacity: 0.9;
+}
