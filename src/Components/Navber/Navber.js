@@ -56,7 +56,6 @@ const Navber = () => {
                     {
                         user && <CustomLink to={'/myitems'}>My Items</CustomLink>
                     }
-                    <CustomLink to={'/blogs'}>BLOGS</CustomLink>
                     {
                         user ? <button onClick={userSignOut} className='signout text-white'>Signout </button> : <CustomLink to={'/Login'}>Login</CustomLink>
                     }
