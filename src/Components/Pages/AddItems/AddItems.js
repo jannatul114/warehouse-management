@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../../firebase.init';
+import Footer from '../../Shared/Footer/Footer';
 
 const AddItems = () => {
     const [user] = useAuthState(auth);
@@ -49,6 +50,7 @@ const AddItems = () => {
                 </form>
             </div>
             <ToastContainer />
+            <Footer></Footer>
         </div>
     )
 

@@ -16,17 +16,17 @@ const Login = () => {
     const navigate = useNavigate();
     const [
         signInWithEmailAndPassword,
-        user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    //showing loading when loading or sending
     if (loading || sending) {
         <Loading></Loading>
     }
     const emailRef = useRef('');
     const passwordRef = useRef('');
-
+    //showing error
     useEffect(() => {
         if (error) {
             toast(error?.message);
@@ -34,6 +34,7 @@ const Login = () => {
         }
     }, [error])
 
+    //reset password
     const resetPassword = async () => {
         const email = emailRef.current.value;
         if (email) {
@@ -45,18 +46,19 @@ const Login = () => {
         }
     }
 
-
+    //user login with jwt token
     const userLogin = async event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-
         await signInWithEmailAndPassword(email, password);
         const { data } = await axios.post(`https://sleepy-ocean-93953.herokuapp.com/login`, { email })
         console.log(data);
         localStorage.setItem('accessToken', data.accessToken);
         navigate(from, { replace: true });
     }
+
+
     return (
         <div>
             <div className='w-50 p-2 mx-auto my-3'>
@@ -70,7 +72,6 @@ const Login = () => {
                         <button className='explore-button'><span className='btn-span'></span>Login</button>
                     </div>
                     <p className='text-center fs-5'>Don't have any account? <Link className='fw-bold' style={{ color: '#009688' }} to={'/registar'}>Registar</Link> </p>
-
                 </form>
                 <p className='text-center fs-5'>Forget password? <button onClick={resetPassword} style={{ textDecoration: 'underline', color: '#009688' }} className='bg-white border-0 '>reset</button></p>
                 <div className='mx-auto'>

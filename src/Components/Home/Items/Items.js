@@ -19,12 +19,12 @@ const Items = () => {
             <div>
                 <h1 className='text-center my-4'>Inventory items</h1>
                 <div className='d-flex justify-content-center'>
-                    <div className="row row-cols-1 row-cols-md-3 g-4 my-5 mx-2 ">
+                    <div className="row row-cols-1 row-cols-md-3 g-4 my-5 mx-2 d-flex justify-content-center">
                         {items[0]?.img ?
                             items.map(item =>
                                 <div className="col">
 
-                                    <div style={{ border: "2px solid #009688" }} className="card set-border">
+                                    <div style={{ border: "2px solid #009688" }} className="card set-border h-100">
                                         <img src={item.img} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <h3 className="card-title">{item.name}</h3>
@@ -38,7 +38,9 @@ const Items = () => {
                                         </div>
                                     </div>
                                 </div>
-                            ) : <Loading></Loading>
+                            ) : <div className='d-flex justify-content-center'>
+                                <Loading></Loading>
+                            </div>
                         }
                     </div>
                 </div>

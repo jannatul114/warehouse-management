@@ -18,27 +18,22 @@ const Footer = () => {
                         </div>
 
 
-
-
-
-
-
                         <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
                             <h6 className="text-uppercase fw-bold mb-4">
                                 Useful links
                             </h6>
                             <p>
-                                <p className="text-reset">Pricing</p>
+                                <span className="text-reset">Pricing</span>
                             </p>
                             <p>
-                                <p className="text-reset">Settings</p>
+                                <span className="text-reset">Settings</span>
                             </p>
                             <p>
-                                <p className="text-reset">Orders</p>
+                                <span className="text-reset">Orders</span>
                             </p>
                             <p>
-                                <p className="text-reset">Help</p>
+                                <span className="text-reset">Help</span>
                             </p>
                         </div>
 
@@ -49,13 +44,12 @@ const Footer = () => {
                             <h6 className="text-uppercase fw-bold mb-4">
                                 Contact
                             </h6>
-                            <p><i className="fas fa-home me-3"></i> Dhaka, Bangladesh</p>
+                            <p>Dhaka, Bangladesh</p>
                             <p>
-                                <i className="fas fa-envelope me-3"></i>
                                 fruitsvally@gmail.com
                             </p>
-                            <p><i className="fas fa-phone me-3"></i> + 01 111 222 222</p>
-                            <p><i className="fas fa-print me-3"></i> + 01 333 666 444</p>
+                            <p> + 01 111 222 222</p>
+                            <p> + 01 333 666 444</p>
                         </div>
 
                     </div>

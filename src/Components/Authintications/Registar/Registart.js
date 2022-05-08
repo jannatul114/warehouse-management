@@ -19,22 +19,24 @@ const Registart = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
+    //showing error
     useEffect(() => {
         if (error) {
             toast(error?.message);
         }
     }, [error])
-
     if (loading) {
         <Loading></Loading>
     }
 
+    //navigating user
     if (user) {
         navigate(from, { replace: true });
     }
+
+
     const handleRegistar = async event => {
         event.preventDefault()
-        const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
         await createUserWithEmailAndPassword(email, password);
@@ -55,12 +57,11 @@ const Registart = () => {
                     <div className='d-flex justify-content-center'>
                         <button className='explore-button'><span className='btn-span'></span>Registar</button>
                     </div>
-
                 </form>
+
                 <div className='mx-auto'>
                     <SocialLogin></SocialLogin>
                 </div>
-
             </div>
             <ToastContainer />
             <Footer></Footer>

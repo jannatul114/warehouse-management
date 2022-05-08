@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 
@@ -50,8 +50,9 @@ const Inventory = () => {
         const supplier = itemDetail?.supplier;
         const price = itemDetail?.price;
         const description = itemDetail?.description;
+        const sold = itemDetail.sold;
         const quantity = JSON.parse(itemDetail.quantity) + parseInt(event.target.quantity.value)
-        const updatingQuantity = { name, img, supplier, price, description, quantity };
+        const updatingQuantity = { name, img, supplier, price, description, quantity, sold };
         setItemDetail(updatingQuantity)
         const url = `https://sleepy-ocean-93953.herokuapp.com/allfruits/${id}`;
         fetch(url, {
@@ -64,8 +65,6 @@ const Inventory = () => {
                 console.log(data)
                 event.target.reset()
             })
-        console.log(itemDetail);
-
 
     }
     return (
@@ -86,7 +85,6 @@ const Inventory = () => {
                                         <p className="card-text"> <span className='fw-bold'>Price:</span> {itemDetail?.price}</p>
                                         <p className="card-text"><span className='fw-bold'>Supplire:</span> {itemDetail?.supplier}</p>
                                         <p className="card-text"> <span className='fw-bold'>Quantity:</span> {itemDetail?.quantity}</p>
-                                        <p className="card-text"> <span className='fw-bold'>Sold:</span> {itemDetail?.sold}</p>
                                         <p className="card-text"><span className='fw-bold'>Id:</span> {id}</p>
 
                                         <button className='update-button' onClick={delivered}>{itemDetail.quantity !== 0 ? 'deliverd' : 'Sold Out'}</button>
@@ -105,6 +103,7 @@ const Inventory = () => {
                     <form onSubmit={handleRestoke}>
                         <input name='quantity' type="text" className="form-control w-75" id="exampleInputEmail1" placeholder="quantity you want to restoke" required />
                         <input className='m-3 update-button' type="submit" value="Restoke" />
+                        <Link to={'/manage'}><button className='update-button'>Manage Inventory</button></Link>
                     </form>
                 </div>
             </div> : <Loading></Loading>

@@ -26,7 +26,7 @@ const Blogs = () => {
                         <h5 className='my-3'>Difference between Sql and nosql are: </h5>
                         <p>1. sql databases are not suited for hierarchical data storage but npsql databases are best suited for hierarchical data storage.</p>
                         <p>2. sql database Follows ACID property but nosql database Follows CAP(consistency, availability, partition tolerance)</p>
-                        <p>3. sql database are Vertically Scalable	bur nosql database are Vertically Scalable.</p>
+                        <p>3. sql database are Vertically Scalable	but nosql database are Horizontally scalable.</p>
                         <p>4. SQL database are RELATIONAL DATABASE MANAGEMENT SYSTEM but Nosql are Non-relational or distributed database system.</p>
                     </div>
 

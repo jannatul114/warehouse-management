@@ -43,6 +43,9 @@ const Navber = () => {
                 <h1 className='small-name'>Fruit Valley</h1>
                 {menuDisplay && <nav className='nav-2'>
                     <CustomLink to={'/home'}>HOME</CustomLink>
+                    <CustomLink to={'/about'}>About</CustomLink>
+                    <CustomLink to={'/blogs'}>Blogs</CustomLink>
+
                     {!user && <CustomLink to={'/Registar'}>Registar</CustomLink>}
                     {
                         user && <CustomLink to={'/manage'}>Manage items</CustomLink>
@@ -55,7 +58,7 @@ const Navber = () => {
                     }
                     <CustomLink to={'/blogs'}>BLOGS</CustomLink>
                     {
-                        user ? <button onClick={userSignOut} className='signout'>Signout</button> : <CustomLink to={'/Login'}>Login</CustomLink>
+                        user ? <button onClick={userSignOut} className='signout text-white'>Signout </button> : <CustomLink to={'/Login'}>Login</CustomLink>
                     }
                 </nav>
                 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
+import Footer from '../../Shared/Footer/Footer';
 import Loading from '../../Shared/Loading/Loading';
 import './Manage.css';
 const Manage = () => {
@@ -38,6 +39,7 @@ const Manage = () => {
                     items[0]?.img ? <Table className='table' striped bordered responsive hover>
                         <thead>
                             <tr style={{ border: '2px solid #009688' }} className=''>
+                                <th>images</th>
                                 <th>Name</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
@@ -50,6 +52,7 @@ const Manage = () => {
                             {
                                 items.map(item =>
                                     <tr key={item._id}>
+                                        <td > <img style={{ height: '30px' }} src={item.img} alt="" /> </td>
                                         <td>{item.name}</td>
                                         <td>{item.price}</td>
                                         <td>{item.quantity}</td>
@@ -73,6 +76,8 @@ const Manage = () => {
             <div className='d-flex justify-content-center'>
                 <Link to={'/additems'} ><button className='update-button fw-bold'>Add a new Item</button></Link>
             </div>
+
+            <Footer></Footer>
         </div>
     );
 };
