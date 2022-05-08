@@ -19,7 +19,7 @@ const Items = () => {
             <div>
                 <h1 className='text-center my-4'>Inventory items</h1>
                 <div className='d-flex justify-content-center'>
-                    <div className="row row-cols-1 row-cols-md-3 g-4 my-5 ">
+                    <div className="row row-cols-1 row-cols-md-3 g-4 my-5 mx-2 ">
                         {items[0]?.img ?
                             items.map(item =>
                                 <div className="col">
